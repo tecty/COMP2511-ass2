@@ -1,9 +1,9 @@
 
-public class Shipment<E> {
-	private final E from;
-	private final E to;
+public class Shipment {
+	private final Vertex from;
+	private final Vertex to;
 	private final int cost;
-	public Shipment(E from, E to, int cost) {
+	public Shipment(Vertex from, Vertex to, int cost) {
 		this.from = from;
 		this.to   = to;
 		this.cost = cost;
@@ -11,13 +11,13 @@ public class Shipment<E> {
 	/**
 	 * @return the from vertex
 	 */
-	public E getFrom() {
+	public Vertex getFrom() {
 		return from;
 	}
 	/**
 	 * @return the to vertex
 	 */
-	public E getTo() {
+	public Vertex getTo() {
 		return to;
 	}
 	/**

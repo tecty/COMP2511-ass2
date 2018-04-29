@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class State<E> implements Comparable<State<E>>, Cloneable{
 	private int cost;
 	private ArrayList<E> visited;
-	private ArrayList<Shipment<E>>unfinishShipment;
+	private ArrayList<Shipment>unfinishShipment;
 	/**
 	 * 
 	 */
-	public State(E initial, ArrayList<Shipment<E>> unfinishShipment) {
-		// create a arraylist for visited vertex.
+	public State(E initial, ArrayList<Shipment> unfinishShipment) {
+		// create a arrayList for visited vertex.
 		this.visited =new ArrayList<E>();
 		visited.add(initial);
 		cost = 0;
@@ -65,7 +65,7 @@ public class State<E> implements Comparable<State<E>>, Cloneable{
 	/**
 	 * @return the unfinishShipment
 	 */
-	public ArrayList<Shipment<E>> getUnfinishShipment() {
+	public ArrayList<Shipment> getUnfinishShipment() {
 		return unfinishShipment;
 	}
 

@@ -10,7 +10,7 @@ class StateTest {
 	@Test
 	void testCreateState() {
 		Vertex v1 = new Vertex("hello",10);
-		ArrayList<Shipment<Vertex>> ship = new ArrayList<Shipment<Vertex>>();
+		ArrayList<Shipment> ship = new ArrayList<Shipment>();
 		State<Vertex> s1 = new State<Vertex>(v1, ship);
 		assertEquals(0, s1.getCost());;
 	}
@@ -19,7 +19,7 @@ class StateTest {
 	void testAddVisited() {
 		Vertex v1 = new Vertex("hello",10);
 		Vertex v2 = new Vertex("hello",15);
-		ArrayList<Shipment<Vertex>> ship = new ArrayList<Shipment<Vertex>>();
+		ArrayList<Shipment> ship = new ArrayList<Shipment>();
 		State<Vertex> s1 = new State<Vertex>(v1,ship);
 
 		// try to visit another place 
@@ -37,7 +37,7 @@ class StateTest {
 		// some vertex is needed 
 		Vertex v1 = new Vertex("hello",10);
 		Vertex v2 = new Vertex("hello",15);
-		ArrayList<Shipment<Vertex>> ship = new ArrayList<Shipment<Vertex>>();
+		ArrayList<Shipment> ship = new ArrayList<Shipment>();
 		State<Vertex> s1 = new State<Vertex>(v1,ship);
 		State<Vertex> s2 = new State<Vertex>(v1,ship);
 
@@ -46,7 +46,7 @@ class StateTest {
 		
 		PriorityQueue<State<Vertex>> pq = new PriorityQueue<State<Vertex>>();
 		
-		// add both state into pq
+		// add both state into priority queue
 		pq.add(s1);
 		pq.add(s2);
 		
@@ -58,7 +58,7 @@ class StateTest {
 	@Test 
 	void testClone() {
 		// some vertex is needed 
-		ArrayList<Shipment<Vertex>> ship = new ArrayList<Shipment<Vertex>>();
+		ArrayList<Shipment> ship = new ArrayList<Shipment>();
 		Vertex v1 = new Vertex("hello",10);
 		Vertex v2 = new Vertex("hello2",15);
 		Vertex v3 = new Vertex("hello3",15);

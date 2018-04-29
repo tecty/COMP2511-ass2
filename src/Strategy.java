@@ -1,4 +1,5 @@
+import java.util.ArrayList;
 
-public interface Strategy<E> {
-	int h(Shipment<E> unfishedShipment);
+public interface Strategy{
+	int h(ArrayList<Shipment> unfishedShipment);
 }

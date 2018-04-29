@@ -8,7 +8,7 @@ class shipmentTest {
 	void testCreateShipment	() {
 		Vertex v1 = new Vertex("hello",10);
 		Vertex v2 = new Vertex("hello2",10);
-		Shipment<Vertex> ship = new Shipment<Vertex>(v1, v2, 15);
+		Shipment ship = new Shipment(v1, v2, 15);
 		
 		assertEquals(15, ship.getCost());
 		assertEquals("hello", ship.getFrom().getName());
