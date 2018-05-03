@@ -72,7 +72,7 @@ public class Graph {
 		// return the cost by searching the array.
 		// also add up the refuel cost at the start point
 		return edges[vertecies.indexOf(from)][vertecies.indexOf(to)] 
-				+ from.getRefuel_cost();
+				+ from.getRefuelCost();
 	}
 
 }

@@ -30,8 +30,9 @@ public class ShipmentPlanner {
 			
 			// split it as command array
 			String[] command = line.split(" ");
-			
-			// if the line is command, discard this 
+			// a valid command must have two words in command
+			if (command.length < 2) continue;
+			// if the line is comment, discard this 
 			if( command[0].charAt(0)=='#') continue;
 			// read the command to call correspond function
 			switch (command[0]) {
@@ -50,6 +51,9 @@ public class ShipmentPlanner {
 							sg = new SearchGraph(graph,
 									new RemainShipStrategy(),
 									graph.getVertexByName("Sydney"));
+//							sg = new SearchGraph(graph,
+//									new ZeroStrategy(),
+//									graph.getVertexByName("Sydney"));
 						}
 						sg.addRequireShipment(command[1], command[2]);
 						break;

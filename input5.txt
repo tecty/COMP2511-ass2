@@ -1,0 +1,63 @@
+Refuelling 0 Sydney
+Refuelling 0 a
+Refuelling 0 b
+Refuelling 0 c
+Refuelling 0 d
+Refuelling 0 e
+Refuelling 0 f
+Refuelling 0 g
+Refuelling 0 h
+
+Time 100 Sydney a
+Time 100 Sydney b
+Time 100 Sydney c
+Time 100 Sydney d
+Time 100 Sydney e
+Time 100 Sydney f
+Time 100 Sydney g
+Time 100 Sydney h
+
+Time 100 a b
+Time 100 a c
+Time 100 a d
+Time 100 a e
+Time 100 a f
+Time 100 a g
+Time 100 a h
+
+Time 100 b c
+Time 100 b d
+Time 100 b e
+Time 100 b f
+Time 100 b g
+Time 100 b h
+
+Time 100 c d
+Time 100 c e
+Time 100 c f
+Time 100 c g
+Time 100 c h
+
+Time 100 d e
+Time 100 d f
+Time 100 d g
+Time 100 d h
+
+Time 100 e f
+Time 100 e g
+Time 100 e h
+
+Time 100 f g
+Time 100 f h
+
+Time 100 g h
+
+
+Shipment Sydney a
+Shipment Sydney b
+Shipment Sydney c
+Shipment Sydney d
+Shipment Sydney e
+Shipment Sydney f
+Shipment Sydney g
+Shipment Sydney h

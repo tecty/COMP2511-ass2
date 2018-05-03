@@ -1,7 +1,7 @@
 
 public class Vertex {
 	private final String name;
-	private final int refuel_cost;
+	private final int refuelCost;
 	/**
 	 * 
 	 * @param name
@@ -10,7 +10,7 @@ public class Vertex {
 	public Vertex(String name, int cost) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
-		this.refuel_cost = cost;
+		this.refuelCost = cost;
 	}
 	/**
 	 * @return the name
@@ -21,8 +21,8 @@ public class Vertex {
 	/**
 	 * @return the refuel_cost
 	 */
-	public int getRefuel_cost() {
-		return refuel_cost;
+	public int getRefuelCost() {
+		return refuelCost;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
@@ -36,7 +36,7 @@ public class Vertex {
 		else {
 			Vertex v = (Vertex) obj ; 
 			if (v.getName().equals(this.getName()) && 
-				v.getRefuel_cost() == this.getRefuel_cost()) {
+				v.getRefuelCost() == this.getRefuelCost()) {
 				return true;
 			}
 		}
