@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 import javax.naming.spi.DirStateFactory.Result;
 
+/**
+ * Main class to handle the command line instructions.
+ * Calling the essential function, act as a main controller
+ * of this programme. 
+ * @author tecty
+ *
+ */
 public class ShipmentPlanner {
 	static private Graph graph ;
 	static SearchGraph sg ;
@@ -36,6 +43,14 @@ public class ShipmentPlanner {
 			if( command[0].charAt(0)=='#') continue;
 			// read the command to call correspond function
 			switch (command[0]) {
+			
+					/*
+					 * I don't want to construct a bootstrap class
+					 * since this calling abstraction is simple enough.
+					 * Also I don't need to use sperate function to 
+					 * call these functions.
+					 * 
+					 */
 					case "Refuelling":
 						// create a vertex in map 
 						graph.addVertex(command[2], 
@@ -51,6 +66,7 @@ public class ShipmentPlanner {
 							sg = new SearchGraph(graph,
 									new RemainShipStrategy(),
 									graph.getVertexByName("Sydney"));
+//							Search perform by zero stratey.
 //							sg = new SearchGraph(graph,
 //									new ZeroStrategy(),
 //									graph.getVertexByName("Sydney"));

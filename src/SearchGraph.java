@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 /**
- * 
+ * The class handle the algorithm about searching graph.
+ * Use bfs+A* search to do the serach.
  * @author tecty
  *
  */
@@ -14,6 +15,13 @@ public class SearchGraph {
 	final private ArrayList<Vertex> initial;
 	// a counter for test the performance 
 	private int counter = 0;
+	/**
+	 * Initial this class by given a well constructed graph,
+	 * a strategy use in search, the starting point.
+	 * @param g The complete graph need to be search in.
+	 * @param strategy Strategy use in search graph.
+	 * @param start Start location in the graph.
+	 */
 	public SearchGraph(Graph g, Strategy strategy,
 			Vertex start) {
 		graph = g;
@@ -27,12 +35,21 @@ public class SearchGraph {
 		// initial the priority queue for the pending list
 		pq = new PriorityQueue<>();
 	}
+	/**
+	 * Add all the required shipment that need to be plan.
+	 * @param ship A shipment need to be finish.
+	 */
 	public void addRequireShipment(Shipment ship) {
 		this.requireShipment.add(ship);
 	}
-	public void addRequireShipment(String v1, String v2) {
-		Vertex from = graph.getVertexByName(v1); 
-		Vertex to = graph.getVertexByName(v2);
+	/**
+	 * Add a require shipment by specify two vertex's name.
+	 * @param fromName From vertex's name.
+	 * @param toName To vertex's name.
+	 */
+	public void addRequireShipment(String fromName, String toName) {
+		Vertex from = graph.getVertexByName(fromName); 
+		Vertex to = graph.getVertexByName(toName);
 		
 		this.requireShipment.add(
 				new Shipment(
@@ -41,6 +58,11 @@ public class SearchGraph {
 		);
 	}
 	
+	/**
+	 * Reset the strategy if needed. Also reset all the progress of the 
+	 * search, since the fundamental strategy is changed.
+	 * @param st The need strategy to perform a search.
+	 */
 	public void setStrategy(Strategy st) {
 		// refresh the strategy
 		this.strategy = st;
@@ -52,10 +74,18 @@ public class SearchGraph {
 		this.counter = 0;
 	}
 	
+	/**
+	 * Performance counter about this search.
+	 * @return How many state has visited.
+	 */
 	public int getCounter() {
 		return counter;
 	}
 	
+	/**
+	 * Do the search by the settings and graph.
+	 * @return A finish state that has minimum cost.
+	 */
 	public State doSearch() {
 
 		// add the initial state into the priority queue

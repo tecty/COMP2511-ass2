@@ -3,6 +3,7 @@
  */
 
 /**
+ * Data model to store each shipment.
  * @author tecty
  *
  */
@@ -11,6 +12,13 @@ public class Shipment {
 	private final Vertex from;
 	private final Vertex to;
 	private final int cost;
+	/**
+	 * Create a new shipment by specify its from-, to vertex and this
+	 * shipment's total cost.
+	 * @param from Shipment start location.
+	 * @param to Shipment end location.
+	 * @param cost The total cost of finish this shipment.
+	 */
 	public Shipment(Vertex from, Vertex to, int cost) {
 		// TODO Auto-generated constructor stub
 		this.from = from;
@@ -38,19 +46,22 @@ public class Shipment {
 		return false;
 	}
 	/**
-	 * @return the from
+	 * Return the start location of this shipment.
+	 * @return the from The start location's object.
 	 */
 	public Vertex getFrom() {
 		return from;
 	}
 	/**
-	 * @return the to
+	 * Return the end location of this shipment.
+	 * @return the to End location of this shipment.
 	 */
 	public Vertex getTo() {
 		return to;
 	}
 	/**
-	 * @return the cost
+	 * Get the total cost of finish this shipment.
+	 * @return the cost Total cost of finish this shipment.
 	 */
 	public int getCost() {
 		return cost;

@@ -1,5 +1,10 @@
 import java.util.ArrayList;
-
+/**
+ * Calculate the huristic cost by adding up the 
+ * remaining cost of all the shipment.
+ * @author tecty
+ *
+ */
 public class RemainShipStrategy implements Strategy {
 
 	@Override

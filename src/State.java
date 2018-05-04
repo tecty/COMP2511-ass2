@@ -5,6 +5,11 @@ import java.util.ArrayList;
  */
 
 /**
+ * Data model to store the information of each possible
+ * shipment order. Including the visit order, unfinished
+ * shipment of current state. How much has spent to get to 
+ * this state. The strategy to get the heuristic cost.
+ * The graph this state is on.
  * @author tecty
  *
  */
@@ -15,6 +20,14 @@ public class State implements Comparable<State>, Cloneable{
 	private final Strategy strategy;
 	private final Graph graph;
 	
+	/**
+	 * Initial this state by given all information it need.
+	 * @param ufs Current unfinished shipment.
+	 * @param g The graph this state is perform.
+	 * @param strategy Strategy to search the graph.
+	 * @param visited Visit order of this state.
+	 * @param initial_cost the The cost that get to this state.
+	 */
 	public State(ArrayList<Shipment> ufs,Graph g,  Strategy strategy, 
 			ArrayList<Vertex> visited, int initial_cost) {
 		
@@ -40,6 +53,13 @@ public class State implements Comparable<State>, Cloneable{
 		this.strategy = strategy;
 	}
 	
+	/**
+	 * Initial this state by provide some essential information at start locatioin.
+	 * @param ufs All required shipment.
+	 * @param g The graph need to search on.
+	 * @param strategy The strategy of this search.
+	 * @param initial_history The visit history only have start location.
+	 */
 	public State(ArrayList<Shipment> ufs,Graph g,  Strategy strategy , ArrayList<Vertex> initial_history) {
 		// calling the big constructor to initial the fresh object
 		this(ufs,g,strategy,initial_history,0);
@@ -48,12 +68,17 @@ public class State implements Comparable<State>, Cloneable{
 
 
 	/**
-	 * @return the visited
+	 * Return the vertex visited history.
+	 * @return the visited ArrayList of history vertex in order.
 	 */
 	public ArrayList<Vertex> getVisited() {
 		return visited;
 	}
 
+	/**
+	 * The final vertex of this state.
+	 * @return Current vertex of this state.
+	 */
 	public Vertex getCurrentVertex() {
 		// get the current vertex this ship is on
 		return visited.get(visited.size()-1);
@@ -61,15 +86,16 @@ public class State implements Comparable<State>, Cloneable{
 	
 
 	/**
-	 * @return the unfinishShipment
+	 * All the unfinished shipment of current cost.
+	 * @return the unfinishShipment ArrayList of this state.
 	 */
 	public ArrayList<Shipment> getUnfinishShipment() {
 		return unfinishShipment;
 	}
 
 	/**
-	 * 
-	 * @param ship
+	 * Try to finish this shipment in this state. 
+	 * @param ship The shipment need to be finish.
 	 */
 	public void finishShipment(Shipment ship) {
 		if (!ship.getFrom().equals(this.getCurrentVertex())) {
@@ -94,29 +120,32 @@ public class State implements Comparable<State>, Cloneable{
 	
 	
 	/**
-	 * @return the currentCost
+	 * The current cost of reaching this state.
+	 * @return the currentCost Cost of reach this state.
 	 */
 	public int getCurrentCost() {
 		return currentCost;
 	}
 
 	/**
-	 * @param currentCost 
-	 * add up the current cost
+	 * Add up the current cost.
+	 * @param currentCost Current cost of getting this state. 
 	 */
 	public void addCurrentCost(int currentCost) {
 		this.currentCost += currentCost;
 	}
 
 	/**
-	 * @return the strategy
+	 * The strategy perform this search.
+	 * @return the strategy Strategy that perform this search.
 	 */
 	public Strategy getStrategy() {
 		return strategy;
 	}
 
 	/**
-	 * @return the graph
+	 * Get the graph this state is on.
+	 * @return the graph Graph of this state is on. 
 	 */
 	public Graph getGraph() {
 		return graph;

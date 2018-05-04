@@ -1,11 +1,15 @@
-
+/**
+ * Data model store the basic information about a vertex.
+ * @author tecty
+ *
+ */
 public class Vertex {
 	private final String name;
 	private final int refuelCost;
 	/**
-	 * 
-	 * @param name
-	 * @param cost
+	 * Initial the vertex by given a name and the refuel cost.
+	 * @param name Name of this vertex.
+	 * @param cost Cost of refuel on this location.
 	 */
 	public Vertex(String name, int cost) {
 		// TODO Auto-generated constructor stub
@@ -13,13 +17,15 @@ public class Vertex {
 		this.refuelCost = cost;
 	}
 	/**
-	 * @return the name
+	 * Get the name of this location.
+	 * @return the name Name of this vertex.
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * @return the refuel_cost
+	 * Get the refuel cost of this location.
+	 * @return the refuel_cost Refuel cost of this location.
 	 */
 	public int getRefuelCost() {
 		return refuelCost;
@@ -49,7 +55,5 @@ public class Vertex {
 	public String toString() {
 		return name;
 	}
-	
-	
 	
 }

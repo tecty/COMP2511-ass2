@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * No need to care anything, always return 0 in any given case.
+ * @author tecty
+ *
+ */
 public class ZeroStrategy implements Strategy {
 
 	@Override

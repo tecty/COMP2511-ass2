@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * Print the state by a style. 
+ * @author tecty
+ *
+ */
 public class StatePrinter {
+	/**
+	 * Print the state by requirement.
+	 * @param s State need to be printed.
+	 */
 	public void printState(State s) {
 		System.out.println("cost = "+s.getCurrentCost());
 		
