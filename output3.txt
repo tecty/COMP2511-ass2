@@ -1,0 +1,5 @@
+4 nodes expanded
+cost = 137
+Ship Sydney to v2
+Ship v2 to v1
+Ship v1 to v3
